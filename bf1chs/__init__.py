@@ -38,24 +38,11 @@ from bf1chs.conflict import Conflicts
 from bf1chs.ttffont import TTFInfo
 
 VERSION = "v0.8.0"
-PROJECT_ID = 8862
+PROJECT_ID = 10796
 
 ARTIFACT_MANIFEST = {
-    "strings-zht.csv.json": "静态本地化文件",
-    "twinkle.json": "动态本地化文件",
-    "bf2042.json": "额外动态本地化文件（战地风云 2042 相关）",
-    "bfv.json": "额外动态本地化文件（战地风云 V 相关）",
-    "codex.json": "额外动态本地化文件（百科）",
-    "dogtags.json": "额外动态本地化文件（狗牌）",
-    "generic.json": "额外动态本地化文件（通用）",
-    "news.json": "额外动态本地化文件（新闻）",
-    "store.json": "额外动态本地化文件（商店）",
-    "video.json": "额外动态本地化文件（视频）",
-    "eaplay.json": "额外动态本地化文件（EA Play）",
-    "bf4.json": "额外动态本地化文件（战地风云 4 相关）",
-    "bfhl.json": "额外动态本地化文件（战地风云：硬仗相关）",
-    "legal.json": "额外动态本地化文件（法律）",
-    "gameplay.json": "额外动态本地化文件（游玩）",
+    "BF4-strings-zht.csv.json": "战地 4 静态本地化文件",
+    "BFH-strings-zht.csv.json": "战地硬仗静态本地化文件"
 }
 
 console = Console(
@@ -157,36 +144,6 @@ class BF1ChsToolbox:
                 "localization/strings",
                 "静态本地化文件存放路径，可为相对路径。",
                 *Validator.none_validator,
-            ),
-            "localization.twinklePath": (
-                "localization/twinkle",
-                "动态本地化文件存放路径，可为相对路径。",
-                *Validator.none_validator,
-            ),
-            "localization.twinkleFilename": (
-                "BF1CHS_twinkle_extra.json",
-                "默认动态本地化文件名，需以 .json 结尾。",
-                *Validator.filename_validator(".json"),
-            ),
-            "localization.legalPath": (
-                "localization/legal",
-                "法律相关动态本地化文件存放路径，可为相对路径。",
-                *Validator.none_validator,
-            ),
-            "localization.legalFilename.eula": (
-                "BF1CHS-EULA_Battlefield1_PC_8.16.16.txt",
-                "用户许可协议文件名，需以 .txt 结尾。",
-                *Validator.filename_validator(".txt"),
-            ),
-            "localization.legalFilename.tos": (
-                "BF1CHS-BF1-EA-Terms_of_service-PC.txt",
-                "服务条款文件名，需以 .txt 结尾。",
-                *Validator.filename_validator(".txt"),
-            ),
-            "localization.legalFilename.privacy": (
-                "BF1CHS-BF1-EA-Privacy_Policy-PC.txt",
-                "隐私政策文件名，需以 .txt 结尾。",
-                *Validator.filename_validator(".txt"),
             ),
             "localization.debugKeyMaxLength": (
                 8,
@@ -586,7 +543,7 @@ class BF1ChsToolbox:
                 ██████╔╝█████╗  ╚██║██║     ███████║███████╗
                 ██╔══██╗██╔══╝   ██║██║     ██╔══██║╚════██║
                 ██████╔╝██║      ██║╚██████╗██║  ██║███████║
-                ╚═════╝ ╚═╝      ╚═╝ ╚═════╝╚═╝  ╚═╝╚══════╝
+                ╚═════╝ ╚═╝      ╚═╝ ╚═════╝╚═╝  ╚═╝╚══════╝（H&4）
                 """
             )
         )
@@ -1528,17 +1485,17 @@ class BF1ChsToolbox:
                                 "actor": self._update_strings,
                             },
                             "update-histogram": {
-                                "name": "生成 Frosty Editor 码表并更新静态本地化 chunk 文件（仅插入新字符）",
+                                "name": "（不适用）生成 Frosty Editor 码表并更新静态本地化 chunk 文件（仅插入新字符）",
                                 "desc": "将给定的字符列表文件中的字符序列加入码表、更新导出的原始本地化文件，并生成新的本地化文件。本功能仅基于输入的字符列表文件，不会对原有的码表和本地化文件进行修改。",
                                 "actor": self._update_histogram,
                             },
                             "twinkle": {
-                                "name": "更新动态本地化文件",
+                                "name": "（不适用）更新动态本地化文件",
                                 "desc": "根据替换后的 .json 汉化文件生成可读取的 .json 动态本地化文件。",
                                 "actor": self._update_twinkle,
                             },
                             "legal": {
-                                "name": "更新法律相关动态本地化文件",
+                                "name": "（不适用）更新法律相关动态本地化文件",
                                 "desc": "根据替换后的 .json 汉化文件生成可读取的 .txt 动态本地化文件。",
                                 "actor": self._update_legal,
                             },
