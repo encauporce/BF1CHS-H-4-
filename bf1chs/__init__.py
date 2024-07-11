@@ -1480,8 +1480,8 @@ class BF1ChsToolbox:
                                 "actor": self._check_conflict,
                             },
                             "strings": {
-                                "name": "生成 Frosty Editor 码表并更新静态本地化 chunk 文件",
-                                "desc": "根据替换后的 .json 汉化文件生成码表、更新导出的原始本地化文件，并生成新的本地化文件。",
+                                "name": "生成 Frosty Editor 码表并更新静态本地化 chunk 文件（需要提取根据你想要修改的游戏改一下文件名）",
+                                "desc": "根据替换后的 .json 汉化文件生成码表、更新导出的原始本地化文件，并生成新的本地化文件。如果想要更新BF4的本地化文件，则需要选择BF4的chunk并且在.\artifact\\processed\中把BF4-strings-zht.csv.json开头的BF4-删除，strings-zht.csv.json。硬仗同理。",
                                 "actor": self._update_strings,
                             },
                             "update-histogram": {
