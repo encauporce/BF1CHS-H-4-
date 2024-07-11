@@ -1264,7 +1264,7 @@ class BF1ChsToolbox:
 
         new_ttf_path = self._rich_text(
             message="输入新的字体文件名",
-            default=f"new-{os.path.basename(original_res_path).replace('.res', '.ttf')}",
+            default=f"new-{os.path.basename(original_res_path).replace('.res', '.gfx')}",
             filter=lambda x: os.path.join(font_path, x),
         )
         if os.path.exists(new_ttf_path):
@@ -1304,7 +1304,7 @@ class BF1ChsToolbox:
 
         original_ttf_path = self._rich_fuzzy_select_file(
             directory=font_path,
-            types=".ttf",
+            types=".gfx",
             message="选择需要导入的字体文件",
         )
         if original_ttf_path is None:
@@ -1312,7 +1312,7 @@ class BF1ChsToolbox:
 
         new_res_path = self._rich_text(
             message="输入新的字体资源文件名",
-            default=f"new-{os.path.basename(original_ttf_path).replace('.ttf', '.res')}",
+            default=f"new-{os.path.basename(original_ttf_path).replace('.gfx', '.res')}",
             filter=lambda x: os.path.join(font_path, x),
         )
         if os.path.exists(new_res_path):
@@ -1349,7 +1349,7 @@ class BF1ChsToolbox:
         elif font_family is False:
             # If font_family is False, it means no exception was raised before obtaining the font family.
             console.print(
-                "[yellow]已完成字体转换，但字体信息获取失败。请手动获取 FontFamily。\n"
+                "[yellow]已完成字体转换，H&4不需要修改字族信息，所以没有获取到fontfamily是正常的。\n"
             )
 
     def _check_update(self):
@@ -1506,16 +1506,16 @@ class BF1ChsToolbox:
                     "name": "字体替换相关",
                     "actor": BF1ChsToolbox.SelectAction(
                         title="字体替换相关",
-                        desc="此部分包含字体替换相关功能。",
+                        desc="此部分包含字体替换相关功能。使用 Flash 反编译工具即可修改 .gfx 内的字体",
                         choices={
                             "res2ttf": {
-                                "name": "资源文件 (.res) -> 字体文件 (.ttf)",
-                                "desc": "将 Frosty Editor 导出的字体资源文件转换为 .ttf 字体文件。",
+                                "name": "资源文件 (.res) -> 字体文件 (.gfx)",
+                                "desc": "将 Frosty Editor 导出的字体资源文件转换为 .gfx Flash资源文件。",
                                 "actor": self._res2ttf,
                             },
                             "ttf2res": {
-                                "name": "字体文件 (.ttf) -> 资源文件 (.res)",
-                                "desc": "将 .ttf 字体文件转换为 Frosty Editor 可用的资源文件。",
+                                "name": "字体文件 (.gfx) -> 资源文件 (.res)",
+                                "desc": "将 .gfx Flash资源文件转换为 Frosty Editor 可用的资源文件。",
                                 "actor": self._ttf2res,
                             },
                         },
