@@ -1481,23 +1481,8 @@ class BF1ChsToolbox:
                             },
                             "strings": {
                                 "name": "生成 Frosty Editor 码表并更新静态本地化 chunk 文件（需要提取根据你想要修改的游戏改一下文件名）",
-                                "desc": "根据替换后的 .json 汉化文件生成码表、更新导出的原始本地化文件，并生成新的本地化文件。如果想要更新BF4的本地化文件，则需要选择BF4的chunk并且在.\artifact\\processed\中把BF4-strings-zht.csv.json开头的BF4-删除，strings-zht.csv.json。硬仗同理。",
+                                "desc": "根据替换后的 .json 汉化文件生成码表、更新导出的原始本地化文件，并生成新的本地化文件。如果想要更新BF4的本地化文件，则需要选择BF4的chunk并且在.\artifact\\processed\中把BF4-strings-zht.csv.json开头的BF4-删除，变成strings-zht.csv.json。硬仗同理。",
                                 "actor": self._update_strings,
-                            },
-                            "update-histogram": {
-                                "name": "（不适用）生成 Frosty Editor 码表并更新静态本地化 chunk 文件（仅插入新字符）",
-                                "desc": "将给定的字符列表文件中的字符序列加入码表、更新导出的原始本地化文件，并生成新的本地化文件。本功能仅基于输入的字符列表文件，不会对原有的码表和本地化文件进行修改。",
-                                "actor": self._update_histogram,
-                            },
-                            "twinkle": {
-                                "name": "（不适用）更新动态本地化文件",
-                                "desc": "根据替换后的 .json 汉化文件生成可读取的 .json 动态本地化文件。",
-                                "actor": self._update_twinkle,
-                            },
-                            "legal": {
-                                "name": "（不适用）更新法律相关动态本地化文件",
-                                "desc": "根据替换后的 .json 汉化文件生成可读取的 .txt 动态本地化文件。",
-                                "actor": self._update_legal,
                             },
                         },
                     ),
