@@ -11,7 +11,7 @@
 
 详情请参见 [ParaTranz 项目页面](https://paratranz.cn/projects/10796)。
 
-**下载请前往 [本项目 Releases](我还不知道怎么写) 页面。**
+**下载请前往 [本项目 Releases](https://github.com/encauporce/BF1CHS-H-4-/releases/tag/test) 页面。**
 
 ## 许可证 License
 [GPL-3.0](./LICENSE)
